@@ -152,25 +152,25 @@ if st.button("Submit Your Query"):
                 f.write(char)
     # PART 2 ADDED: BUTTONS FOR WIKI ARTICLES
     # IF topics.txt exists, read it and display the topics  as buttons
-st.markdown("Click the buttons below to add Wikipedia articles to be Vectorized")
+#st.markdown("Click the buttons below to add text articles to be Vectorized")
 # PART 2 ADDED: BUTTONS FOR WIKI ARTICLES
 # buttons need to be in a separate column
 col1, col2, col3 = st.columns(3)
-if "topics.txt" in os.listdir("."):
-    with open("topics.txt", "r") as f:
-        topics = f.read().split(",")
-        print(topics)
-        if col1.button(topics[0]):
-            wiki_search(topics[0])
-        if col2.button(topics[1]):
-            wiki_search(topics[1])
-        if col3.button(topics[2]):
-            wiki_search(topics[2])
+#if "topics.txt" in os.listdir("."):
+   # with open("topics.txt", "r") as f:
+    #    topics = f.read().split(",")
+    #    print(topics)
+     #   if col1.button(topics[0]):
+      #      wiki_search(topics[0])
+      #  if col2.button(topics[1]):#
+      #      wiki_search(topics[1])
+       # if col3.button(topics[2]):
+      #      wiki_search(topics[2])
 
 
 # print(user_input)
-st.markdown("Click the button below to add Wikipedia articles to the vectorstore:")
-if st.button("REBUILD VECTORSTORE", key="rebuild", help="This will rebuild the vectorstore with the added Wikipedia articles."):
+#st.markdown("Click the button below to add your text articles to the vectorstore:")
+if st.button("REBUILD VECTORSTORE", key="rebuild", help="This will rebuild the vectorstore with the added text articles."):
     with st.spinner('New Documents are being vectorized... This may take a while...'):
         embed_doc()
         with open("vectorstore.pkl", "rb") as f:
