@@ -1,7 +1,8 @@
 langchain==0.0.88
 openai
 bs4
-faiss
+pytorch 
+faiss-cpu
 streamlit==1.18.1
 streamlit_chat==0.0.2.1
 unstructured
