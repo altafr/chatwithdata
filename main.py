@@ -4,7 +4,7 @@ from streamlit_chat import message
 
 from langchain.llms import OpenAI
 from ingest_data import embed_doc
-from ingest_data import pdf_to_text
+
 from query_data import _template, CONDENSE_QUESTION_PROMPT, QA_PROMPT, get_chain
 import pickle
 import os
