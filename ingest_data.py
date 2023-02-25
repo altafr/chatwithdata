@@ -5,18 +5,6 @@ from langchain.embeddings import OpenAIEmbeddings
 import pickle
 import os
 
-import PyPDF2
-
-def pdf_to_text(pdf_path):
-    with open(pdf_path, 'rb') as f:
-        pdf_reader = PyPDF2.PdfFileReader(f)
-        num_pages = pdf_reader.getNumPages()
-        text = ''
-        for page in range(num_pages):
-            page_obj = pdf_reader.getPage(page)
-            page_text = page_obj.extractText()
-            text += page_text
-    return text
 
 # loader = UnstructuredFileLoader("state_of_the_union.txt")
 def embed_doc():
