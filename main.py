@@ -65,26 +65,6 @@ if uploaded_file is not None and uploaded_file.name not in os.listdir("data"):
     st.write("File uploaded successfully")
 
 
-    if uploaded_file.name.endswith(".pdf"):
-        # Call the function to convert PDF to text
-        print('PDF detected')
-        print(type(uploaded_file))
-        pdf_filepath = os.path.splitext(uploaded_file)[0] + ".pdf"
-        print(pdf_filepath)
-        text = pdf_to_text(pdf_filepath)
-        #print(text)
-
-        # Create output file path by replacing .pdf extension with .txt
-        output_filepath = os.path.splitext(uploaded_file)[0] + ".txt"
-
-        # Write the text to the output file
-        with open(output_filepath, "w") as f:
-            f.write(text)
-        print("Text saved to", output_filepath)
-    else:
-        print("Input file is not a PDF.")
-
-
 
     with st.spinner('Document is being vectorized...'):
         embed_doc()
